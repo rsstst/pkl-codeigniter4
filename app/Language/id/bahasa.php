@@ -12,4 +12,5 @@ return [
     'english' => 'Bahasa Inggris',
 
     'btn' => 'Selengkapnya',
+
 ];

@@ -9,7 +9,7 @@
 			class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
 		<span class="relative z-10 bg-slate-100 px-6 text-2xl"><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?></span>
 	</span>
-	<h3 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h3>
+	<h1 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
 	<div class="justify-center flex sm:flex-row flex-col gap-x-8 bg-slate-100 p-8">
 		<div class="text-white bg-teal-600 flex flex-row gap-x-4 justify-center w-1/6 p-8 rounded-xl">
 			<div class="flex flex-col gap-y-8 justify-center">

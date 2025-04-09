@@ -110,19 +110,23 @@
 
 							<ul class="mt-6 space-y-4 text-sm">
 								<li>
-									<a href="product.html" class="text-gray-700 transition hover:opacity-75"> Produk </a>
+									<a href="product.html" class="text-gray-700 transition hover:opacity-75"> <?= lang('bahasa.product')?> </a>
 								</li>
 
 								<li>
-									<a href="article.html" class="text-gray-700 transition hover:opacity-75"> Artikel </a>
+									<a href="product.html" class="text-gray-700 transition hover:opacity-75"> <?= lang('bahasa.activity')?> </a>
 								</li>
 
 								<li>
-									<a href="about.html" class="text-gray-700 transition hover:opacity-75"> Tentang Kami </a>
+									<a href="article.html" class="text-gray-700 transition hover:opacity-75"> <?= lang('bahasa.article')?> </a>
 								</li>
 
 								<li>
-									<a href="contact.html" class="text-gray-700 transition hover:opacity-75"> Kontak Kami </a>
+									<a href="about.html" class="text-gray-700 transition hover:opacity-75"> <?= lang('bahasa.about')?> </a>
+								</li>
+
+								<li>
+									<a href="contact.html" class="text-gray-700 transition hover:opacity-75"> <?= lang('bahasa.contact')?> </a>
 								</li>
 							</ul>
 						</div>
@@ -161,6 +165,6 @@
 					</div>
 				</div>
 
-				<p class="text-xs text-gray-500">&copy; 2022. Company Name. All rights reserved.</p>
+				<p class="text-xs text-gray-500">&copy; 2025. Skibidi Inc. All rights reserved.</p>
 			</div>
 		</footer>

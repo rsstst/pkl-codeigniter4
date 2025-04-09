@@ -10,15 +10,15 @@
 	</span>
 	<h1 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
 
-	<div class="block w-5/6 p-4 m-auto bg-slate-100">
+	<div class="block p-4 w-fit m-auto bg-slate-100">
 		<div class="flex flex-row gap-4">
 			<div class="flex flex-col gap-16">
 			<?php foreach ($allArticle as $article): ?>
 				<div class="block w-fit m-auto">
 					<div class="flex flex-col bg-white p-2 rounded-2xl">
-						<img class="w-4xl" src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" alt="" />
+						<img class="w-2xl" src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>" />
 						<div class="flex flex-col gap-2 p-2">
-							<h1 class="text-xl font-bold"><?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?></h1>
+							<h2 class="text-xl font-bold"><?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?></h2>
 							<div class="flex flex-row gap-4">
 								<p class="text-sm bg-blue-600 rounded-2xl px-2 text-white"><?= $lang == 'id' ? $article['nama_kategori'] : $article['nama_kategori']; ?></p>
 								<p class="text-sm text-slate-400"><?= date('d F Y', strtotime($article['created_at'])); ?></p>
@@ -34,15 +34,15 @@
 				</div>
 				<?php endforeach; ?>
 			</div>
-			<div class="block">
+			<div class="block w-xl">
 				<div class="flex flex-col gap-4">
 				<?php foreach ($sideArticle as $article): ?>
 					<a href="<?= base_url($lang == 'id'
                                             ? 'id/artikel/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
-                                            : 'en/article/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>" class="flex flex-row gap-4 bg-white bg-auto rounded-2xl transition ease-in-out hover:bg-blue-200">
-						<img class="w-[128px] rounded-2xl" src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" alt="" />
+                                            : 'en/article/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>" class="flex flex-row gap-4 bg-white bg-auto rounded-2xl transition ease-in-out hover:bg-blue-200 p-4">
+						<img class="w-[128px] rounded-2xl" src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>" />
 						<div class="flex flex-col gap-2 justify-center">
-							<h1 class="font-bold text-sm"><?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?></h1>
+							<h2 class="font-bold text-sm"><?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?></h2>
 							<p class="text-sm text-slate-400"><?= date('d F Y', strtotime($article['created_at'])); ?></p>
 						</div>
 					</a>

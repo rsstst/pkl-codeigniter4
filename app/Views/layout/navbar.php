@@ -127,7 +127,7 @@ if (!empty($categoriesAktivitas)) {
                         <?php if (!empty($kategoriAktivitasLinks)): ?>
                             <?php foreach ($kategoriAktivitasLinks as $categoriAktivitasLink): ?>
                                 <li>
-                                    <a href="javascript:void(0)" class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= $categoriAktivitasLink['name']; ?> </a>
+                                    <a href="<?= $categoriAktivitasLink['url']; ?>" class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= $categoriAktivitasLink['name']; ?> </a>
                                 </li>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -146,7 +146,7 @@ if (!empty($categoriesAktivitas)) {
                         <?php if (!empty($categoryLinks)): ?>
                             <?php foreach ($categoryLinks as $categoryLink): ?>
                                 <li>
-                                    <a href="javascript:void(0)" class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= $categoryLink['name']; ?> </a>
+                                    <a href="<?= $categoryLink['url']; ?>" class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= $categoryLink['name']; ?> </a>
                                 </li>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -167,10 +167,10 @@ if (!empty($categoriesAktivitas)) {
                     <ul
                         class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]">
                         <li>
-                            <a href="<?= $indonesia_url; ?>" class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= lang('bahasa.indonesia') ?> </a>
+                        <a href="<?= $indonesia_url; ?>" <?= $lang === 'id' ? 'class="active disabled"' : ''; ?> class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= lang('bahasa.indonesia') ?> </a>
                         </li>
                         <li>
-                            <a href="<?= $english_url; ?>" class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= lang('bahasa.english') ?> </a>
+                            <a href="<?= $english_url; ?>" <?= $lang === 'en' ? 'class="active disabled"' : ''; ?> class="hover:text-teal-600 hover:fill-teal-600 text-gray-800 text-[15px] flex items-center"> <?= lang('bahasa.english') ?> </a>
                         </li>
                     </ul>
                 </li>

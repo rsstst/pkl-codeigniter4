@@ -18,11 +18,11 @@
                                     : 'en/product/' . $p['slug_en']); ?>" class="group block w-100 transition ease-in-out duration-150 hover:scale-110">
 				<img
 					src="<?= base_url('assets/img/produk/' . $p["foto_produk"]) ?>"
-					alt="<?= $lang == 'id' ? $p['alt_produk_id'] : $p['alt_produk_en']; ?>"
+					`alt`="<?= $lang == 'id' ? $p['alt_produk_id'] : $p['alt_produk_en']; ?>"
 					class="aspect-square w-full rounded-sm object-cover" />
 
 				<div class="mt-3">
-					<h1 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4"><?= $lang == 'id' ? $p['nama_produk_id'] : $p['nama_produk_en']; ?></h1>
+					<h2 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4"><?= $lang == 'id' ? $p['nama_produk_id'] : $p['nama_produk_en']; ?></h2>
 
 					<p class="mt-1 text-sm text-gray-700"><?= $lang == 'id' ? substr($p['deskripsi_produk_id'], 0, 250) : substr($p['deskripsi_produk_en'], 0, 250); ?>...</p>
 				</div>

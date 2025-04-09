@@ -14,7 +14,7 @@
 							<div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
 								<span class="text-3xl font-semibold"><img
 										src="<?= base_url('assets/img/slider/' . $s['foto_slider']) ?>"
-										alt="" />
+										alt="<?= ($lang == 'id') ? $slide['alt_foto_slider_id'] : $slide['alt_foto_slider_en']; ?>" />
 								</span>
 								<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
 									<h2 class="text-4xl font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"><?= ($lang == 'id') ? $s['caption_slider_id'] : $s['caption_slider_en']; ?></h2>
@@ -34,7 +34,7 @@
 		<span class="relative z-10 bg-slate-100 px-6 text-2xl rounded-t-2xl"><?= $lang == 'id' ? $aboutMeta['nama_halaman_id'] : $aboutMeta['nama_halaman_en']; ?></span>
 	</span>
 
-	<h3 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $aboutMeta['deskripsi_halaman_id'] : $aboutMeta['deskripsi_halaman_en']; ?></h3>
+	<h1 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $aboutMeta['deskripsi_halaman_id'] : $aboutMeta['deskripsi_halaman_en']; ?></h1>
 
 	<section class="bg-slate-100">
 		<div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
@@ -64,154 +64,99 @@
 	<!-- Product -->
 	<span class="relative flex justify-center">
 		<div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
-		<span class="relative z-10 bg-slate-100 px-6 text-2xl">Product</span>
+		<span class="relative z-10 bg-slate-100 px-6 text-2xl"><?= $lang == 'id' ? $productMeta['nama_halaman_id'] : $productMeta['nama_halaman_en']; ?></span>
 	</span>
 
-	<h3 class="p-4 bg-slate-100 text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quidem!</h3>
+	<h1 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $productMeta['deskripsi_halaman_id'] : $productMeta['deskripsi_halaman_en']; ?></h1>
 	<div class="flex flex-row gap-16 justify-center p-8 bg-slate-100">
-		<a href="#" class="group block w-100 transition ease-in-out duration-150 hover:scale-110">
-			<img
-				src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-				alt=""
-				class="aspect-square w-full rounded-sm object-cover" />
+		<?php foreach ($product as $p) : ?>
+			<a href="<?= base_url($lang == 'id'
+							? 'id/produk/'  . $p['slug_id']
+							: 'en/product/' . $p['slug_en']); ?>" class="group block w-100 transition ease-in-out duration-150 hover:scale-110">
+				<img
+					src="<?= base_url('assets/img/produk/' . $p["foto_produk"]) ?>"
+					alt="<?= $lang == 'id' ? $p['alt_produk_id'] : $p['alt_produk_en']; ?>"
+					class="aspect-square w-full rounded-sm object-cover" />
 
-			<div class="mt-3">
-				<h3 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">Skull Peace</h3>
-
-				<p class="mt-1 text-sm text-gray-700">T-shirt dengan dua jari tulang</p>
-			</div>
-		</a>
-		<a href="detail-product" class="group block w-100 transition ease-in-out duration-150 hover:scale-110">
-			<img
-				src="https://images.unsplash.com/photo-1564859228273-274232fdb516?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-				alt=""
-				class="aspect-square w-full rounded-sm object-cover" />
-
-			<div class="mt-3">
-				<h3 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">Lighthouse</h3>
-
-				<p class="mt-1 text-sm text-gray-700">T-shirt dengan gambar mercusuar</p>
-			</div>
-		</a>
+				<div class="mt-3">
+					<h2 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4"><?= $lang == 'id' ? $p['nama_produk_id'] : $p['nama_produk_en']; ?></h2>
+				</div>
+			</a>
+		<?php endforeach; ?>
 	</div>
 
 	<!-- Activity -->
 	<span class="relative flex justify-center">
 		<div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
-		<span class="relative z-10 bg-slate-100 px-6 text-2xl">Activity</span>
+		<span class="relative z-10 bg-slate-100 px-6 text-2xl"><?= $lang == 'id' ? $aktivitasMeta['nama_halaman_id'] : $aktivitasMeta['nama_halaman_en']; ?></span>
 	</span>
 
-	<h3 class="p-4 bg-slate-100 text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quidem!</h3>
+	<h1 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $aktivitasMeta['deskripsi_halaman_id'] : $aktivitasMeta['deskripsi_halaman_en']; ?></h1>
 	<div class="flex flex-row flex-wrap justify-center gap-8 p-8 bg-slate-100">
-		<a href="detail-activity" class="block p-4 rounded-xl transition ease-in-out hover:scale-105 bg-white">
-			<img
-				alt=""
-				src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-				class="h-64 w-full object-cover sm:h-80 lg:h-96" />
+		<?php foreach ($aktivitas as $p) : ?>
+			<a href="<?= base_url($lang == 'id'
+							? 'id/aktivitas/'  . $p['slug_aktivitas_id']
+							: 'en/activity/' . $p['slug_aktivitas_en']); ?>" class="block p-4 rounded-xl transition ease-in-out hover:scale-105 bg-white">
+				<img
+					alt="<?= $lang == 'id' ? $p['alt_aktivitas_id'] : $p['alt_aktivitas_en']; ?>"
+					src="<?= base_url('assets/img/aktivitas/' . $p["foto_aktivitas"]) ?>"
+					class="h-64 w-full object-cover sm:h-80 lg:h-96" />
 
-			<h3 class="mt-4 text-lg font-bold text-gray-900 sm:text-xl">Lorem, ipsum dolor.</h3>
-
-			<p class="mt-2 max-w-sm text-gray-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.</p>
-		</a>
-
-		<a href="#" class="block p-4 rounded-xl transition ease-in-out hover:scale-105 bg-white">
-			<img
-				alt=""
-				src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-				class="h-64 w-full object-cover sm:h-80 lg:h-96" />
-
-			<h3 class="mt-4 text-lg font-bold text-gray-900 sm:text-xl">Lorem, ipsum dolor.</h3>
-
-			<p class="mt-2 max-w-sm text-gray-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.</p>
-		</a>
-
-		<a href="#" class="block p-4 rounded-xl transition ease-in-out hover:scale-105 bg-white">
-			<img
-				alt=""
-				src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-				class="h-64 w-full object-cover sm:h-80 lg:h-96" />
-
-			<h3 class="mt-4 text-lg font-bold text-gray-900 sm:text-xl">Lorem, ipsum dolor.</h3>
-
-			<p class="mt-2 max-w-sm text-gray-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.</p>
-		</a>
-
-		<a href="#" class="block p-4 rounded-xl transition ease-in-out hover:scale-105 bg-white">
-			<img
-				alt=""
-				src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-				class="h-64 w-full object-cover sm:h-80 lg:h-96" />
-
-			<h3 class="mt-4 text-lg font-bold text-gray-900 sm:text-xl">Lorem, ipsum dolor.</h3>
-
-			<p class="mt-2 max-w-sm text-gray-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.</p>
-		</a>
-
-		<a href="#" class="block p-4 rounded-xl transition ease-in-out hover:scale-105 bg-white">
-			<img
-				alt=""
-				src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-				class="h-64 w-full object-cover sm:h-80 lg:h-96" />
-
-			<h3 class="mt-4 text-lg font-bold text-gray-900 sm:text-xl">Lorem, ipsum dolor.</h3>
-
-			<p class="mt-2 max-w-sm text-gray-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.</p>
-		</a>
+				<h2 class="mt-4 text-lg font-bold text-gray-900 sm:text-xl"><?= $lang == 'id' ? $p['judul_aktivitas_id'] : $p['judul_aktivitas_en']; ?></h2>
+			</a>
+		<?php endforeach; ?>
 	</div>
 
 	<!-- Article -->
 	<span class="relative flex justify-center">
 		<div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
-		<span class="relative z-10 bg-slate-100 px-6 text-2xl">Article</span>
+		<span class="relative z-10 bg-slate-100 px-6 text-2xl"><?= $lang == 'id' ? $articleMeta['nama_halaman_id'] : $articleMeta['nama_halaman_en']; ?></span>
 	</span>
 
-	<h3 class="p-4 bg-slate-100 text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quidem!</h3>
-	<div class="block w-5/6 p-4 bg-slate-100 m-auto">
-		<div class="flex flex-row justify-center gap-16">
+	<h1 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $articleMeta['deskripsi_halaman_id'] : $articleMeta['deskripsi_halaman_en']; ?></h1>
+	<div class="block w-fit p-4 bg-slate-100 m-auto">
+		<div class="flex flex-row gap-4">
 			<div class="block w-fit">
-				<div class="flex flex-col bg-white p-2 rounded-2xl">
-					<img class="w-4xl" src="https://sablonmanual.id/wp-content/uploads/2024/11/post_sablonmanual.id_26-1024x657.webp" alt="" />
-					<div class="flex flex-col gap-2 p-2">
-						<h1 class="text-xl font-bold">Workflow seorang pembuat kaos</h1>
-						<div class="flex flex-row gap-4">
-							<p class="text-sm bg-blue-600 rounded-2xl px-2 text-white">Tutorial</p>
-							<p class="text-sm text-slate-400">12 Feb 2023</p>
+				<?php if (!empty($article)) : ?>
+					<div class="flex flex-col bg-white p-2 rounded-2xl">
+						<?php if (isset($article[0]['foto_artikel'])): ?>
+							<img class="w-4xl" src="<?= base_url('assets/img/artikel/' . $article[0]['foto_artikel']); ?>" alt="<?= $lang == 'id' ? $article[0]['alt_artikel_id'] : $article[0]['alt_artikel_en']; ?>" />
+						<?php else: ?>
+							<p>No image available</p>
+						<?php endif; ?>
+						<div class="flex flex-col gap-2 p-2">
+							<h2 class="text-xl font-bold"><?= $lang == 'id' ? $article[0]['judul_artikel_id'] : $article[0]['judul_artikel_en']; ?></h2>
+							<div class="flex flex-row gap-4">
+								<p class="text-sm bg-blue-600 rounded-2xl px-2 text-white"><?= $lang == 'id' ? $article[0]['nama_kategori'] : $article[0]['nama_kategori']; ?></p>
+								<p class="text-sm text-slate-400"><?= date('d F Y', strtotime($article[0]['created_at'])); ?></p>
+							</div>
+							<p><?= $lang == 'id' ? $article[0]['snippet_id'] : $article[0]['snippet_en']; ?></p>
+							<a class="text-blue-400 transition ease-in-out hover:text-blue-700" href="<?= base_url(
+																											$lang === 'id'
+																												? 'id/artikel/' . ($article[0]['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article[0]['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+																												: 'en/article/' . ($article[0]['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article[0]['slug_artikel_en'] ?? 'article-not-found')
+																										); ?>"><?= lang('bahasa.btn') ?></a>
 						</div>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quibusdam.</p>
-						<a class="text-blue-400 transition ease-in-out hover:text-blue-700" href="detail-article">Selengkapnya</a>
 					</div>
-				</div>
+				<?php endif; ?>
 			</div>
 			<div class="block w-xl">
 				<div class="flex flex-col gap-4">
-					<a href="" class="flex flex-row gap-4 bg-white bg-auto rounded-2xl transition ease-in-out hover:bg-blue-200 p-4">
-						<img class="w-[128px] rounded-2xl" src="https://gratisongkir-storage.com/products/900x900/vN5nMuCePG0r.jpg" alt="" />
-						<div class="flex flex-col gap-2 justify-center">
-							<h1 class="font-bold text-sm">Bagaimana sih cara menggunakan mesin sablon kaos?</h1>
-							<p class="text-sm text-slate-400">08 Feb 2023</p>
-						</div>
-					</a>
-					<a href="" class="flex flex-row gap-4 bg-white bg-auto rounded-2xl transition ease-in-out hover:bg-blue-200 p-4">
-						<img class="w-[128px] rounded-2xl" src="https://gratisongkir-storage.com/products/900x900/vN5nMuCePG0r.jpg" alt="" />
-						<div class="flex flex-col gap-2 justify-center">
-							<h1 class="font-bold text-sm">Bagaimana sih cara menggunakan mesin sablon kaos?</h1>
-							<p class="text-sm text-slate-400">08 Feb 2023</p>
-						</div>
-					</a>
-					<a href="" class="flex flex-row gap-4 bg-white bg-auto rounded-2xl transition ease-in-out hover:bg-blue-200 p-4">
-						<img class="w-[128px] rounded-2xl" src="https://gratisongkir-storage.com/products/900x900/vN5nMuCePG0r.jpg" alt="" />
-						<div class="flex flex-col gap-2 justify-center">
-							<h1 class="font-bold text-sm">Bagaimana sih cara menggunakan mesin sablon kaos?</h1>
-							<p class="text-sm text-slate-400">08 Feb 2023</p>
-						</div>
-					</a>
-					<a href="" class="flex flex-row gap-4 bg-white bg-auto rounded-2xl transition ease-in-out hover:bg-blue-200 p-4">
-						<img class="w-[128px] rounded-2xl" src="https://gratisongkir-storage.com/products/900x900/vN5nMuCePG0r.jpg" alt="" />
-						<div class="flex flex-col gap-2 justify-center">
-							<h1 class="font-bold text-sm">Bagaimana sih cara menggunakan mesin sablon kaos?</h1>
-							<p class="text-sm text-slate-400">08 Feb 2023</p>
-						</div>
-					</a>
+					<?php if (!empty($sideArtikel)): ?>
+						<?php foreach ($sideArtikel as $article): ?>
+							<a href="<?= base_url($lang == 'id'
+											? 'id/artikel/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
+											: 'en/article/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>" class="flex flex-row gap-4 bg-white bg-auto rounded-2xl transition ease-in-out hover:bg-blue-200 p-4">
+								<img class="w-[128px] rounded-2xl" src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>" />
+								<div class="flex flex-col gap-2 justify-center">
+									<h1 class="font-bold text-sm"><?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?></h1>
+									<p class="text-sm text-slate-400"> <?= date('d F Y', strtotime($article['created_at'])); ?></p>
+								</div>
+							</a>
+						<?php endforeach; ?>
+					<?php else: ?>
+						<p>Tidak ada artikel terkait.</p>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
@@ -220,27 +165,27 @@
 	<!-- Contact -->
 	<span class="relative flex justify-center">
 		<div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
-		<span class="relative z-10 bg-slate-100 px-6 text-2xl">Contact</span>
+		<span class="relative z-10 bg-slate-100 px-6 text-2xl"><?= $lang == 'id' ? $contactMeta['nama_halaman_id'] : $contactMeta['nama_halaman_en']; ?></span>
 	</span>
 
-	<h3 class="p-4 bg-slate-100 text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quidem!</h3>
+	<h1 class="p-4 bg-slate-100 text-sm text-center"><?= $lang == 'id' ? $contactMeta['deskripsi_halaman_id'] : $contactMeta['deskripsi_halaman_en']; ?></h1>
 	<div class="justify-center flex sm:flex-row flex-col gap-x-8 bg-slate-100 p-8">
 		<div class="text-white bg-teal-600 flex flex-row gap-x-4 justify-center w-1/6 p-8 rounded-xl">
 			<div class="flex flex-col gap-y-8 justify-center">
 				<div>
 					<i class="fa-regular fa-map text-2xl inline-block align-middle"></i>
-					<h3 class="text-xl inline-block align-middle ml-3">Lokasi Kami</h3>
+					<h2 class="text-xl inline-block align-middle ml-3">Lokasi Kami</h2>
 					<p>Jl. Skibidi No 42</p>
 					<p>Malang, 69420</p>
 				</div>
 				<div>
 					<i class="fa-solid fa-phone text-2xl inline-block align-middle"></i>
-					<h3 class="text-xl inline-block align-middle ml-3">Hubungi Kami</h3>
+					<h2 class="text-xl inline-block align-middle ml-3">Hubungi Kami</h2>
 					<p>+021 111111</p>
 				</div>
 				<div>
 					<i class="fa-regular fa-envelope text-2xl inline-block align-middle"></i>
-					<h3 class="text-xl inline-block align-middle ml-3">Email</h3>
+					<h2 class="text-xl inline-block align-middle ml-3">Email</h2>
 					<p>zxcv@example.com</p>
 				</div>
 			</div>
